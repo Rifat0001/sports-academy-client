@@ -7,7 +7,7 @@ const Header = () => {
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
     );
-    const user = true;
+    const user = false;
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -50,7 +50,7 @@ const Header = () => {
         </>
     );
     return (
-        <div className={`bg-sky-400 border-b-2 border-primary shadow-md py-4 `}>
+        <div className={`bg-orange-300 border-b-2 border-primary shadow-md py-4 `}>
             <div className="navbar max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2">
                 <div className="navbar-start">
                     <div className="dropdown z-10">
@@ -82,7 +82,7 @@ const Header = () => {
                         className="font-bold  uppercase tracking-wide flex items-center"
                     >
                         <p className="flex flex-col">
-                            <h1 className="text-2xl  italic drop-shadow-lg font-bold">Sports Mania</h1>
+                            <h1 className="text-3xl  text-primary italic drop-shadow-lg font-bold">Sports Mania</h1>
                         </p>
                     </Link>
                 </div>
@@ -144,7 +144,7 @@ const Header = () => {
                     ) : (
                         <Link
                             to="/login"
-                            className="btn btn-error text-white rounded-md font-bold"
+                            className="btn btn-primary text-white rounded-md font-bold"
                         >
                             Login
                         </Link>
