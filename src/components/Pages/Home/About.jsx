@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 const About = () => {
     return (
 
-        <section className="bg-orange-100 py-20">
+        <section className="bg-orange-50 py-20">
             <div className="max-w-[1920px] mx-auto xl:px-28 md:px-10 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center justify-between">
                     <div className="">
