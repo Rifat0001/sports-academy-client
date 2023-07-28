@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Provider/AuthProvider";
+import login from '../../../assets/login.jpg'
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const {
@@ -62,7 +65,7 @@ const Register = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img
-                        src="https://img.freepik.com/free-vector/security-concept-illustration_114360-497.jpg"
+                        src={login}
                         alt=""
                     />
                 </div>

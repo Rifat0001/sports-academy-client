@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 const Header = () => {
-
+    const { user, logOut } = useContext(AuthContext);
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
     );
-    const user = false;
-
     useEffect(() => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
@@ -21,6 +21,13 @@ const Header = () => {
         } else {
             setTheme("light");
         }
+    };
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch((err) => {
+                console.log(err);
+            });
     };
     const navOptions = (
         <>
@@ -136,7 +143,7 @@ const Header = () => {
                             </label>
                             <button
                                 className="btn btn-error text-white font-bold"
-
+                                onClick={handleLogOut}
                             >
                                 Log Out
                             </button>
@@ -144,7 +151,7 @@ const Header = () => {
                     ) : (
                         <Link
                             to="/login"
-                            className="btn btn-primary text-white rounded-md font-bold"
+                            className="btn btn-error text-white rounded-md font-bold"
                         >
                             Login
                         </Link>

@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import Swal from "sweetalert2";
 import login from '../../../assets/login.jpg'
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useContext } from "react";
+import { useState } from "react";
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
