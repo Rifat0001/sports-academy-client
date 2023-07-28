@@ -87,7 +87,7 @@ const Login = () => {
                                     className="bg-primary input-bordered input border-l-0 rounded-none w-1/12"
                                     onClick={togglePasswordVisibility}
                                 >
-                                    {showPassword ? <RiEyeFill /> : <RiEyeOffFill />}
+                                    {showPassword ? <RiEyeFill className="text-white" /> : <RiEyeOffFill className="text-white" />}
                                 </button>
                             </div>
                             {errors.password?.type === "required" && (
@@ -109,8 +109,8 @@ const Login = () => {
                     <div className="text-center card-body">
                         <GoogleSignIn></GoogleSignIn>
                         <p>
-                            New to Photo Safari Camp?{" "}
-                            <Link to="/register">Please Register</Link>{" "}
+                            New to this website? Please
+                            <Link to="/register" className="text-primary font-bold"> Register</Link>
                         </p>
                     </div>
                 </div>
