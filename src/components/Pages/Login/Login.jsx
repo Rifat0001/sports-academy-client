@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import Swal from "sweetalert2";
 import login from '../../../assets/login.jpg'
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
@@ -106,7 +107,7 @@ const Login = () => {
                     </form>
 
                     <div className="text-center card-body">
-                        <SocialLogin></SocialLogin>
+                        <GoogleSignIn></GoogleSignIn>
                         <p>
                             New to Photo Safari Camp?{" "}
                             <Link to="/register">Please Register</Link>{" "}
