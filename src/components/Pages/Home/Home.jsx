@@ -1,7 +1,9 @@
+import { Slide } from "react-awesome-reveal";
+
 const Home = () => {
     return (
         <div>
-            home
+            <Slide></Slide>
         </div>
     );
 };
