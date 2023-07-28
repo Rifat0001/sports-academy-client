@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
-import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
-
+import login from '../../../assets/login.jpg'
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
@@ -22,14 +23,30 @@ const Login = () => {
     };
 
     const onSubmit = (data) => {
-
+        signIn(data.email, data.password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate(from, { replace: true });
+            })
+            .catch((err) => {
+                console.log(err);
+                alert('Give Correct Email and Password')
+            });
     };
     return (
         <div className="max-w-[1920px] mx-auto xl:px-28 md:px-10 sm:px-4 bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img
-                        src="https://img.freepik.com/free-vector/security-concept-illustration_114360-497.jpg"
+                        src={login}
                         alt=""
                     />
                 </div>
