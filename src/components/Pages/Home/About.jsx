@@ -7,7 +7,7 @@ const About = () => {
             <div className="max-w-[1920px] mx-auto xl:px-28 md:px-10 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center justify-between">
                     <div className="">
-                        <Fade delay={1e3} cascade damping={1e-1}><h2 className="text-5xl font-bold text-primary mb-6">About Us</h2></Fade>
+                        <Fade delay={1e3} cascade damping={1e-1}><h3 className='text-3xl md:text-5xl text-black font-bold md:font-semibold  mb-4'>About <span className='text-primary'>Us</span></h3></Fade>
                         <p className="text-lg  mb-4 text-justify">
                             With a team of dedicated coaches and instructors, we strive to instill the values of teamwork, sportsmanship, and determination in our young participants. Whether your child is taking their first steps on the field or aiming to enhance their existing abilities, our carefully crafted programs cater to all skill levels and ages.
                         </p>
