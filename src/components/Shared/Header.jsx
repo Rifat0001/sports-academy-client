@@ -3,6 +3,7 @@ import { FaUserShield } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { HiCubeTransparent, HiShoppingCart } from "react-icons/hi";
 import { useContext } from "react";
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Header = () => {
             });
     };
 
-    const isAdmin = true;
+    const isAdmin = false;
     const isInstructor = false;
     const navOptions = (
         <>
