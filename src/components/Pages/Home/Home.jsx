@@ -1,9 +1,10 @@
-import { Slide } from "react-awesome-reveal";
+
+import Slider from "./Slider";
 
 const Home = () => {
     return (
         <div>
-            <Slide></Slide>
+            <Slider></Slider>
         </div>
     );
 };
