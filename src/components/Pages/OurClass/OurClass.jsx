@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import ClassCart from "./ClassCart";
 
 const OurClass = () => {
     const [courses, setCourses] = useState([]);
+
     useEffect(() => {
         fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => setCourses(data))
     })
-    const handleAddToCart = course => {
-        console.log(course);
-    }
+
     return (
         <div className="max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2 py-10">
             <div className="text-center">
@@ -21,18 +20,7 @@ const OurClass = () => {
                 {
                     courses.map(course =>
 
-                        <div key={course.id} className="card my-5 w-96 bg-base-100 shadow-xl">
-                            <figure><img src={course.url} className="w-full h-[250px]" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title text-2xl font-bold text-primary">{course.course_name}</h2>
-                                <p className="font-semibold text-lg"><span className="font-bold me-4">Instructor:</span>{course.course_instructor}</p>
-                                <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{course.seats}</p>
-                                <p className="font-semibold text-lg"><span className="font-bold me-4">Price:</span>${course.price}</p>
-                                <div className="card-actions">
-                                    <button onClick={() => handleAddToCart(course)} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
-                                </div>
-                            </div>
-                        </div>
+                        <ClassCart key={course.id} course={course}></ClassCart>
 
                     )
                 }

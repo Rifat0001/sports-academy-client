@@ -5,7 +5,10 @@ import { useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { HiCubeTransparent, HiShoppingCart } from "react-icons/hi";
 import { useContext } from "react";
+import useCart from "../hooks/useCart";
 const Header = () => {
+    // for check cart length 
+    const [cart] = useCart();
     const { user, logOut } = useContext(AuthContext);
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -65,7 +68,7 @@ const Header = () => {
                 <li>
                     <Link to="dashboard/mycart">
                         <HiShoppingCart size={20} color="#000000"></HiShoppingCart>
-                        <span className="badge badge-error">+{0}</span>
+                        <span className="badge badge-error">+{cart?.length || 0}</span>
                     </Link>
                 </li>
             ) : ''}
