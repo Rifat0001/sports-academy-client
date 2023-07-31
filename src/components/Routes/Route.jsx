@@ -5,9 +5,9 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import DashBoard from "../Layers/DashBoard";
-import UserHome from "../Pages/Dashboard/UserHome";
 import OurClass from "../Pages/OurClass/OurClass";
 import OurInstructor from "../Pages/OurInstructor/OurInstructor";
+import UserHome from "../DashBoardParts/UserHome";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -35,14 +35,14 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    // {
-    //     path: 'dashboard',
-    //     element: <PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
-    //     children: [
-    //         {
-    //             path: 'userhome',
-    //             element: <UserHome></UserHome>
-    //         }
-    //     ]
-    // }
+    {
+        path: 'dashboard',
+        element: <PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
+        children: [
+            {
+                path: 'userhome',
+                element: <UserHome></UserHome>
+            }
+        ]
+    }
 ]);
