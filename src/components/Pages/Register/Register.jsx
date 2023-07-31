@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import login from '../../../assets/login.jpg'
+import { Helmet } from "react-helmet-async";
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const {
@@ -62,6 +63,9 @@ const Register = () => {
     };
     return (
         <div className="max-w-[1920px] mx-auto xl:px-28 md:px-10 sm:px-4 bg-white">
+            <Helmet>
+                <title>Sports Mania | Register</title>
+            </Helmet>
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img

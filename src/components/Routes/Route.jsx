@@ -8,6 +8,7 @@ import DashBoard from "../Layers/DashBoard";
 import OurClass from "../Pages/OurClass/OurClass";
 import OurInstructor from "../Pages/OurInstructor/OurInstructor";
 import UserHome from "../DashBoardParts/UserHome";
+import Mycart from "../Pages/Dashboard/Mycart";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path: 'userhome',
                 element: <UserHome></UserHome>
+            },
+            {
+                path: 'mycart',
+                element: <Mycart></Mycart>
             }
         ]
     }

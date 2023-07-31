@@ -7,6 +7,7 @@ import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext } from "react";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
@@ -45,6 +46,9 @@ const Login = () => {
     };
     return (
         <div className="max-w-[1920px] mx-auto xl:px-28 md:px-10 sm:px-4 bg-white">
+            <Helmet>
+                <title>Sports Mania | Login</title>
+            </Helmet>
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img
