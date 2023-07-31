@@ -4,10 +4,13 @@ import { FaShoppingCart } from "react-icons/fa";
 const OurClass = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('courses.json')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => setCourses(data))
     })
+    const handleAddToCart = course => {
+        console.log(course);
+    }
     return (
         <div className="max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2 py-10">
             <div className="text-center">
@@ -26,7 +29,7 @@ const OurClass = () => {
                                 <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{course.seats}</p>
                                 <p className="font-semibold text-lg"><span className="font-bold me-4">Price:</span>${course.price}</p>
                                 <div className="card-actions">
-                                    <button className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
+                                    <button onClick={() => handleAddToCart(course)} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
                                 </div>
                             </div>
                         </div>

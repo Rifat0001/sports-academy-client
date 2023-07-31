@@ -50,32 +50,25 @@ const Header = () => {
                     Classes
                 </Link>
             </li>
+
             {/* <li>
             <Link to="/dashboard" className="font-bold text-[20px] ">
               Dashboard
             </Link>
           </li> */}
-            {isAdmin ? (
-                <li>
-                    <Link to="/dashboard/adminhome" className="font-bold text-[20px] ">Dashboard</Link>
-                </li>
-            ) : isInstructor ? (
-                <li>
-                    <Link to="/dashboard/instructorhome" className="font-bold text-[20px] ">Dashboard</Link>
-                </li>
-            ) : (
-                <li>
-                    <Link to="/dashboard/userhome" className="font-bold text-[20px] ">Dashboard</Link>
-                </li>
-            )}
-            {user && !isAdmin && !isInstructor && (
+
+            <li>
+                <Link to="/dashboard/userhome" className="font-bold text-[20px] ">Dashboard</Link>
+            </li>
+
+            {user ? (
                 <li>
                     <Link to="dashboard/mycart">
                         <HiShoppingCart size={20} color="#000000"></HiShoppingCart>
                         <span className="badge badge-error">+{0}</span>
                     </Link>
                 </li>
-            )}
+            ) : ''}
         </>
     );
     return (
