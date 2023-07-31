@@ -57,10 +57,10 @@ const DashBoard = () => {
                             <NavLink to="/"> <FaHome></FaHome> Home Page</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/classes"> <FaHourglassHalf></FaHourglassHalf> All Classes</NavLink>
+                            <NavLink to="/class"> <FaHourglassHalf></FaHourglassHalf> All Classes</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/instructors"> <FaUserTie></FaUserTie> Instructors</NavLink>
+                            <NavLink to="/instructor"> <FaUserTie></FaUserTie> Instructors</NavLink>
                         </li>
                     </ul>
                 </div>
