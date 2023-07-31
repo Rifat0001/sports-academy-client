@@ -55,7 +55,7 @@ const OurBlog = () => {
             >
                 {
                     blogs.map(blog =>
-                        <SwiperSlide key={blog.date}>
+                        <SwiperSlide key={blog.id}>
                             <div className="card   w-96 p-2 my-14  bg-white  rounded-md drop-shadow-lg shadow-xl">
                                 <figure><img src={blog.img_url} className='w-full h-[280px]' alt="Shoes" /></figure>
                                 <div className="card-body h-80">

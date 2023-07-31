@@ -1,0 +1,50 @@
+[
+    {
+        "course_name": "Karate",
+        "course_instructor": "John Smith",
+        "seats": 50,
+        "price": 100,
+        "id": "PY101",
+        "url": "https://i.ibb.co/dG9G0C4/sports-academy.jpg"
+    },
+    {
+        "course_name": "Football",
+        "course_instructor": "Jane Doe",
+        "seats": 30,
+        "price": 150,
+        "id": "WEB101",
+        "url": "https://i.ibb.co/17QbRVB/Sports.jpg"
+    },
+    {
+        "course_name": "Hocky",
+        "course_instructor": "Michael Johnson",
+        "seats": 40,
+        "price": 200,
+        "id": "DS101",
+        "url": "https://i.ibb.co/3fvS1CH/72136312-H.jpg"
+    },
+    {
+        "course_name": "Cricket",
+        "course_instructor": "Emily Williams",
+        "seats": 25,
+        "price": 120,
+        "id": "GD101",
+        "url": "https://i.ibb.co/cXYTXm8/download-2.jpg"
+    },
+    {
+        "course_name": "Basketball",
+        "course_instructor": "David Lee",
+        "seats": 35,
+        "price": 90,
+        "id": "JS101",
+        "url": "https://i.ibb.co/DrC4LsT/2e95465a84cab353cac3ce14d343ac3e35de30c8.jpg"
+    },
+    {
+        "course_name": "Swimming",
+        "course_instructor": "Sophia Chen",
+        "seats": 20,
+        "price": 250,
+        "id": "AI101",
+        "url": "https://i.ibb.co/cxqfwVL/SPORT-MAIN.jpg"
+    }
+]
