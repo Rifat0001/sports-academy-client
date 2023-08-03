@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaChalkboard, FaChalkboardTeacher, FaHome, FaHourglassHalf, FaHouseUser, FaReceipt, FaSchool, FaUserGraduate, FaUserSecret, FaUserShield, FaUserTie, FaUsers, FaWind } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
 const DashBoard = () => {
     const { user } = useContext(AuthContext);
-    const isAdmin = false;
+    const [isAdmin] = useAdmin();
     const isInstructor = false;
     return (
         <div className="">
