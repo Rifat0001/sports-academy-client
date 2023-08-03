@@ -9,6 +9,7 @@ import OurClass from "../Pages/OurClass/OurClass";
 import OurInstructor from "../Pages/OurInstructor/OurInstructor";
 import UserHome from "../DashBoardParts/UserHome";
 import Mycart from "../Pages/Dashboard/Mycart";
+import ManageUser from "../DashBoardParts/ManageUser";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             {
                 path: 'mycart',
                 element: <Mycart></Mycart>
+            },
+            {
+                path: 'manageusers',
+                element: <ManageUser></ManageUser>
             }
         ]
     }
