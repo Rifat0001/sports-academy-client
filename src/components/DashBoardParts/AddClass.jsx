@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Provider/AuthProvider';
-
+import axios from 'axios';
+import Swal from 'sweetalert2';
+const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddClass = () => {
     const { user } = useContext(AuthContext);
     const {
@@ -15,15 +17,71 @@ const AddClass = () => {
         },
     });
 
+    const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`
+
     const onSubmit = (data) => {
-        console.log(data)
-    }
+        // Handle form submission, e.g., send data to the server
+
+        const formData = new FormData();
+        formData.append("image", data.image[0]);
+
+        fetch(img_hosting_url, {
+            method: "POST",
+            body: formData,
+        })
+            .then((res) => res.json())
+            .then((imgRes) => {
+                if (imgRes.success) {
+                    const imgURL = imgRes.data.display_url;
+                    const {
+                        name,
+                        instructor,
+                        email,
+                        price,
+                        availableSeats,
+                        studentsEnrolled,
+                    } = data;
+                    const newCourse = {
+                        name,
+                        instructor,
+                        email,
+                        price: parseFloat(price),
+                        availableSeats: parseInt(availableSeats),
+                        studentsEnrolled: parseInt(studentsEnrolled),
+                        image: imgURL,
+                        status: 'pending'
+                    };
+                    console.log(newCourse);
+                    axios.post('http://localhost:5000/class', newCourse, {
+                        headers: {
+                            // 'content-type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem("access-token")}`
+                        },
+                    })
+                        .then(data => {
+                            console.log("new data", data.data);
+                            if (data.data.insertedId) {
+                                reset()
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "success",
+                                    title: "Class is Added Successfully",
+                                    showConfirmButton: false,
+                                    timer: 1500,
+                                });
+                            }
+                        })
+                }
+            });
+
+    };
+    // console.log(image_hosting_token);
     return (
         <div className="w-full">
-            <h2 className="font-bold text-4xl text-center">Add a Class</h2>
+            <h2 className="font-bold text-4xl text-center">Add a class</h2>
             <div className="card flex-shrink-0 w-full bg-base-100">
-                <div className="card-body" onSubmit={handleSubmit(onSubmit)}>
-                    <form >
+                <div className="card-body">
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Class Name*</span>
@@ -137,7 +195,7 @@ const AddClass = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input
-                                className="btn btn-primary"
+                                className="btn btn-secondary"
                                 type="submit"
                                 value="Add Class"
                             />
