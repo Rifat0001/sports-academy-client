@@ -10,10 +10,12 @@ import OurInstructor from "../Pages/OurInstructor/OurInstructor";
 import UserHome from "../DashBoardParts/UserHome";
 import Mycart from "../Pages/Dashboard/Mycart";
 import ManageUser from "../DashBoardParts/ManageUser";
+import Errorpage from "../Pages/ErrorPage/Errorpage";
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <Errorpage></Errorpage>,
         children: [
             {
                 path: '/',
