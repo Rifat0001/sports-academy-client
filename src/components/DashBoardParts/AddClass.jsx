@@ -195,7 +195,7 @@ const AddClass = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input
-                                className="btn btn-secondary"
+                                className="btn btn-primary"
                                 type="submit"
                                 value="Add Class"
                             />

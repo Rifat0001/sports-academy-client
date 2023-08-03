@@ -8,7 +8,7 @@ import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
 
 const ClassCart = ({ course }) => {
-    const { _id, course_name, course_instructor, price, seats, url } = course;
+    const { _id, name, instructor, price, availableSeats, studentEnrolled, image, status } = course;
     const { user } = useContext(AuthContext);
     // for update the add to cart length after clicking each time 
     const [, refetch] = useCart();
@@ -18,7 +18,7 @@ const ClassCart = ({ course }) => {
         console.log(course);
 
         if (user) {
-            const cartItem = { cartItem: _id, course_name, course_instructor, price, url, email: user.email }
+            const cartItem = { cartItem: _id, name, instructor, price, image, email: user.email }
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
@@ -60,11 +60,11 @@ const ClassCart = ({ course }) => {
     const isAdminOrInstructor = user && (isAdmin || isInstructor);
     return (
         <div className="card my-5 w-96 bg-base-100 shadow-2xl">
-            <figure><img src={url} className="w-full h-[250px]" alt="Shoes" /></figure>
+            <figure><img src={image} className="w-full h-[250px]" alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title text-2xl font-bold text-primary">{course_name}</h2>
-                <p className="font-semibold text-lg"><span className="font-bold me-4">Instructor:</span>{course_instructor}</p>
-                <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{seats}</p>
+                <h2 className="card-title text-2xl font-bold text-primary">{name}</h2>
+                <p className="font-semibold text-lg"><span className="font-bold me-4">Instructor:</span>{instructor}</p>
+                <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{availableSeats}</p>
                 <p className="font-semibold text-lg"><span className="font-bold me-4">Price:</span>${price}</p>
                 <div className="card-actions">
                     <button onClick={() => handleAddToCart(course)} disabled={isAdminOrInstructor} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>

@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
 import ClassCart from "./ClassCart";
 import { Helmet } from "react-helmet-async";
+import useClass from "../../hooks/useClass";
 
 const OurClass = () => {
-    const [courses, setCourses] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/class')
-            .then(res => res.json())
-            .then(data => setCourses(data))
-    })
+    const [classData] = useClass()
+    const allClass = classData.filter(singleClass => singleClass.status === 'approved')
 
     return (
         <div className="max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2 py-10">
@@ -22,7 +17,7 @@ const OurClass = () => {
             </div>
             <div className="grid grid-cols-3 ">
                 {
-                    courses.map(course =>
+                    allClass.map(course =>
 
                         <ClassCart key={course.id} course={course}></ClassCart>
 
