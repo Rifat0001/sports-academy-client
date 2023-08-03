@@ -11,6 +11,8 @@ import UserHome from "../DashBoardParts/UserHome";
 import Mycart from "../Pages/Dashboard/Mycart";
 import ManageUser from "../DashBoardParts/ManageUser";
 import Errorpage from "../Pages/ErrorPage/Errorpage";
+import InstructorHome from "../DashBoardParts/InstructorHome";
+import AdminHome from "../DashBoardParts/AdminHome";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -46,6 +48,14 @@ export const router = createBrowserRouter([
             {
                 path: 'userhome',
                 element: <UserHome></UserHome>
+            },
+            {
+                path: 'instructorhome',
+                element: <InstructorHome></InstructorHome>
+            },
+            {
+                path: 'adminhome',
+                element: <AdminHome></AdminHome>
             },
             {
                 path: 'mycart',

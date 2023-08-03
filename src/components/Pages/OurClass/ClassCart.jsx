@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const ClassCart = ({ course }) => {
     const { _id, course_name, course_instructor, price, seats, url } = course;
@@ -53,6 +55,9 @@ const ClassCart = ({ course }) => {
             })
         }
     }
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
+    const isAdminOrInstructor = user && (isAdmin || isInstructor);
     return (
         <div className="card my-5 w-96 bg-base-100 shadow-2xl">
             <figure><img src={url} className="w-full h-[250px]" alt="Shoes" /></figure>
@@ -62,7 +67,7 @@ const ClassCart = ({ course }) => {
                 <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{seats}</p>
                 <p className="font-semibold text-lg"><span className="font-bold me-4">Price:</span>${price}</p>
                 <div className="card-actions">
-                    <button onClick={() => handleAddToCart(course)} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
+                    <button onClick={() => handleAddToCart(course)} disabled={isAdminOrInstructor} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
                 </div>
             </div>
         </div>

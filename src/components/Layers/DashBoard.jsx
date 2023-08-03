@@ -3,11 +3,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaChalkboard, FaChalkboardTeacher, FaHome, FaHourglassHalf, FaHouseUser, FaReceipt, FaSchool, FaUserGraduate, FaUserSecret, FaUserShield, FaUserTie, FaUsers, FaWind } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const DashBoard = () => {
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
-    const isInstructor = false;
+    const [isInstructor] = useInstructor();
     return (
         <div className="">
             <div className="drawer lg:drawer-open ">

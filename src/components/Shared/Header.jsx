@@ -6,6 +6,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { HiCubeTransparent, HiShoppingCart } from "react-icons/hi";
 import { useContext } from "react";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 const Header = () => {
     // for check cart length 
     const [cart] = useCart();
@@ -34,8 +36,8 @@ const Header = () => {
             });
     };
 
-    const isAdmin = false;
-    const isInstructor = false;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const navOptions = (
         <>
             <li>
@@ -59,19 +61,28 @@ const Header = () => {
               Dashboard
             </Link>
           </li> */}
+            {isAdmin ? (
+                <li>
+                    <Link to="/dashboard/adminhome" className="font-bold text-[20px] ">Dashboard</Link>
+                </li>
+            ) : isInstructor ? (
+                <li>
+                    <Link to="/dashboard/instructorhome" className="font-bold text-[20px] ">Dashboard</Link>
+                </li>
+            ) : (
+                <li>
+                    <Link to="/dashboard/userhome" className="font-bold text-[20px] ">Dashboard</Link>
+                </li>
+            )}
 
-            <li>
-                <Link to="/dashboard/userhome" className="font-bold text-[20px] ">Dashboard</Link>
-            </li>
-
-            {user ? (
+            {user && !isAdmin && !isInstructor && (
                 <li>
                     <Link to="dashboard/mycart">
                         <HiShoppingCart size={20} color="#000000"></HiShoppingCart>
                         <span className="badge badge-error">+{cart?.length || 0}</span>
                     </Link>
                 </li>
-            ) : ''}
+            )}
         </>
     );
     return (
