@@ -13,6 +13,8 @@ import ManageUser from "../DashBoardParts/ManageUser";
 import Errorpage from "../Pages/ErrorPage/Errorpage";
 import InstructorHome from "../DashBoardParts/InstructorHome";
 import AdminHome from "../DashBoardParts/AdminHome";
+import AddClass from "../DashBoardParts/AddClass";
+import Instructorroute from "./Instructorroute";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -56,6 +58,10 @@ export const router = createBrowserRouter([
             {
                 path: 'adminhome',
                 element: <AdminHome></AdminHome>
+            },
+            {
+                path: 'addclass',
+                element: <Instructorroute><AddClass></AddClass></Instructorroute>
             },
             {
                 path: 'mycart',
