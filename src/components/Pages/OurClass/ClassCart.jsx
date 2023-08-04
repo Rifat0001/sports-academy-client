@@ -57,9 +57,13 @@ const ClassCart = ({ course }) => {
     }
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
+    const isSeatsAvailable = availableSeats > 0;
     const isAdminOrInstructor = user && (isAdmin || isInstructor);
+    const isButtonDisabled = !isSeatsAvailable || isAdminOrInstructor;
+
+
     return (
-        <div className="card my-5 w-96 bg-base-100 shadow-2xl">
+        <div className={`card my-5 w-96  shadow-2xl ${availableSeats === 0 ? 'bg-error' : 'bg-base-100'} `}>
             <figure><img src={image} className="w-full h-[250px]" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl font-bold text-primary">{name}</h2>
@@ -67,7 +71,7 @@ const ClassCart = ({ course }) => {
                 <p className="font-semibold text-lg"><span className="font-bold me-4">Available Seats:</span>{availableSeats}</p>
                 <p className="font-semibold text-lg"><span className="font-bold me-4">Price:</span>${price}</p>
                 <div className="card-actions">
-                    <button onClick={() => handleAddToCart(course)} disabled={isAdminOrInstructor} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
+                    <button onClick={() => handleAddToCart(course)} disabled={isButtonDisabled} className="btn text-white btn-primary w-full">Enroll Now <FaShoppingCart></FaShoppingCart> </button>
                 </div>
             </div>
         </div>

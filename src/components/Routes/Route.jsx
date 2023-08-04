@@ -17,6 +17,7 @@ import AddClass from "../DashBoardParts/AddClass";
 import Instructorroute from "./Instructorroute";
 import MyClass from "../DashBoardParts/MyClass";
 import ManageClass from "../DashBoardParts/ManageClass";
+import Adminroute from "./Adminroute";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -71,7 +72,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageclasses',
-                element: <ManageClass></ManageClass>
+                element: <Adminroute><ManageClass></ManageClass></Adminroute>
             },
             {
                 path: 'mycart',
@@ -79,7 +80,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageusers',
-                element: <ManageUser></ManageUser>
+                element: <Adminroute><ManageUser></ManageUser></Adminroute>
             }
         ]
     }
