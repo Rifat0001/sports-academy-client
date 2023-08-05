@@ -48,12 +48,6 @@ const Header = () => {
                     Classes
                 </Link>
             </li>
-
-            {/* <li>
-            <Link to="/dashboard" className="font-bold text-[20px] ">
-              Dashboard
-            </Link>
-          </li> */}
             {isAdmin ? (
                 <li>
                     <Link to="/dashboard/adminhome" className="font-bold text-[20px] ">Dashboard</Link>
