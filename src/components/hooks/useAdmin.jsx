@@ -9,7 +9,7 @@ const useAdmin = () => {
     const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
         queryKey: ['isAdmin', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/users/admin/${user?.email}`, {
+            const res = await axios.get(`https://myapp-nine-iota.vercel.app/users/admin/${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access-token")}`,
                 }

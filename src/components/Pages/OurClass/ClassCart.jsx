@@ -19,7 +19,7 @@ const ClassCart = ({ course }) => {
 
         if (user) {
             const cartItem = { cartItem: _id, name, instructor, price, image, email: user.email }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://myapp-nine-iota.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -33,7 +33,7 @@ const ClassCart = ({ course }) => {
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',
-                            title: 'Food added successfully',
+                            title: 'item added successfully',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -42,7 +42,7 @@ const ClassCart = ({ course }) => {
         }
         else {
             Swal.fire({
-                title: 'Please login to order the food',
+                title: 'Please login to enroll',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

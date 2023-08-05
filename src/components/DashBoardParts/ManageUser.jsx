@@ -11,7 +11,7 @@ const ManageUser = () => {
     });
 
     const handleAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://myapp-nine-iota.vercel.app/users/admin/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -29,7 +29,7 @@ const ManageUser = () => {
             })
     }
     const handleInstructor = id => {
-        fetch(`http://localhost:5000/users/instructor/${id}`, {
+        fetch(`https://myapp-nine-iota.vercel.app/users/instructor/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

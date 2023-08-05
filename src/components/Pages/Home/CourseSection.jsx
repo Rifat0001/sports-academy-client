@@ -6,7 +6,7 @@ const CourseSection = () => {
     const [popularClass, setPopularClass] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/class")
+        fetch("https://myapp-nine-iota.vercel.app/class")
             .then((res) => res.json())
             .then((data) => {
                 const popularClasses = data

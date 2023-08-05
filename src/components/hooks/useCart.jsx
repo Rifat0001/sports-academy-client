@@ -9,7 +9,7 @@ const useCart = () => {
         enabled: !loading,
         queryFn: async () => {
             const res = await axios.get(
-                `http://localhost:5000/carts?email=${user?.email}`, {
+                `https://myapp-nine-iota.vercel.app/carts?email=${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access-token")}`,
                 }

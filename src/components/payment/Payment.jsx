@@ -13,7 +13,7 @@ const Payment = () => {
     useEffect(() => {
         const fetchCartItem = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/carts/${_id}`, {
+                const response = await axios.get(`https://myapp-nine-iota.vercel.app/carts/${_id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access-token')}`,
                     },

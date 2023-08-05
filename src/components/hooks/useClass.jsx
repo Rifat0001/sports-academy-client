@@ -5,7 +5,7 @@ const useClass = () => {
     const { refetch, data: classData = [] } = useQuery({
         queryKey: ['classData'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/class')
+            const res = await fetch('https://myapp-nine-iota.vercel.app/class')
             return res.json()
         }
     })

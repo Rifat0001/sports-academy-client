@@ -1,8 +1,33 @@
-# React + Vite
+# b7a12-summer-camp-server_side-Rifat0001
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sports Academy
 
-Currently, two official plugins are available:
+## Features:
+- CRUD Operation,
+- Firebase Authentication,
+- React-awesome-reveal Animation,
+- React Hook Form,
+- Social Login,
+- JWT,
+- Axios,
+- Payment method
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies:
+- React JS,
+- Node JS,
+- Express JS,
+- MongoDB,
+- TanStack Query,
+- JWT,
+- Axios,
+- User Verification,
+- React Stripe,
+- React Awesome Slider,
+- Tailwind CSS,
+- DaisyUI 
+
+# Website Link:
+[Sports Academy]( https://sports-academy-96a7b.web.app/)
+
+### Server Side Link:
+[Server](https://myapp-nine-iota.vercel.app/)

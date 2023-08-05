@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const OurInstructor = () => {
     const [allInstructor, setAllInstructor] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('https://myapp-nine-iota.vercel.app/instructor')
             .then((res) => res.json())
             .then((data) => {
                 // console.log(popularInstructors);

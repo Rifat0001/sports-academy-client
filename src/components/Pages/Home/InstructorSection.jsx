@@ -5,7 +5,7 @@ import InstructorCard from "../OurInstructor/InstructorCard";
 const InstructorSection = () => {
     const [popularInstructor, setPopularInstructor] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('https://myapp-nine-iota.vercel.app/instructor')
             .then((res) => res.json())
             .then((data) => {
 

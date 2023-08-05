@@ -52,7 +52,7 @@ const AddClass = () => {
                         status: 'pending'
                     };
                     console.log(newCourse);
-                    axios.post('http://localhost:5000/class', newCourse, {
+                    axios.post('https://myapp-nine-iota.vercel.app/class', newCourse, {
                         headers: {
                             // 'content-type': 'application/json',
                             'Authorization': `Bearer ${localStorage.getItem("access-token")}`

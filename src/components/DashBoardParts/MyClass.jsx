@@ -10,7 +10,7 @@ const MyClass = () => {
         queryKey: ["class"],
         queryFn: async () => {
             const response = await axios.get(
-                `http://localhost:5000/class?email=${user?.email}`,
+                `https://myapp-nine-iota.vercel.app/class?email=${user?.email}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("access-token")}`,

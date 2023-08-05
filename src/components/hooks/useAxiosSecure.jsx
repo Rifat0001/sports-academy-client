@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://myapp-nine-iota.vercel.app/',
 });
 const useAxiosSecure = () => {
     const { logOut } = useContext(AuthContext)

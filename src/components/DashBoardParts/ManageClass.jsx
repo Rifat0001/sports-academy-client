@@ -9,7 +9,7 @@ const ManageClass = () => {
     const [selectedFeedback, setSelectedFeedback] = useState("");
 
     const handleApprove = async (item) => {
-        fetch(`http://localhost:5000/class/approve/${item._id}`, {
+        fetch(`https://myapp-nine-iota.vercel.app/class/approve/${item._id}`, {
             method: "PATCH",
         })
             .then((res) => res.json())
@@ -29,7 +29,7 @@ const ManageClass = () => {
     };
 
     const handleDeny = (item) => {
-        fetch(`http://localhost:5000/class/denied/${item._id}`, {
+        fetch(`https://myapp-nine-iota.vercel.app/class/denied/${item._id}`, {
             method: "PATCH",
         })
             .then((res) => res.json())
@@ -57,7 +57,7 @@ const ManageClass = () => {
     const handleSubmitFeedback = () => {
 
         fetch(
-            `http://localhost:5000/class/feedback/${selectedClass._id}`,
+            `https://myapp-nine-iota.vercel.app/class/feedback/${selectedClass._id}`,
             {
                 method: "POST",
                 headers: {
