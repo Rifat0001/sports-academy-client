@@ -15,7 +15,7 @@ const OurClass = () => {
                 <h3 className='text-3xl md:text-5xl text-black font-bold md:font-semibold text-center'>Our <span className='text-primary'>Classes</span></h3>
                 <p className=' text-slate-500 text-lg text-center mt-6'>Here is our exclusive classes for you</p>
             </div>
-            <div className="grid grid-cols-3 ">
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-5 ">
                 {
                     allClass.map(course =>
 

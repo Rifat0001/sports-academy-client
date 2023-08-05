@@ -63,7 +63,7 @@ const ClassCart = ({ course }) => {
 
 
     return (
-        <div className={`card my-5 w-96  shadow-2xl ${availableSeats === 0 ? 'bg-error' : 'bg-base-100'} `}>
+        <div className={`card my-5 w-full  shadow-2xl ${availableSeats === 0 ? 'bg-error' : 'bg-base-100'} `}>
             <figure><img src={image} className="w-full h-[250px]" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl font-bold text-primary">{name}</h2>

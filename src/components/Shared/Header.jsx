@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
 import { useState } from "react";
-import { useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { HiCubeTransparent, HiShoppingCart } from "react-icons/hi";
 import { useContext } from "react";
@@ -15,12 +14,6 @@ const Header = () => {
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
     );
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme");
-        document.querySelector("html").setAttribute("data-theme", localTheme);
-    }, [theme]);
-
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("black");
@@ -118,14 +111,14 @@ const Header = () => {
                         className="font-bold  uppercase tracking-wide flex items-center"
                     >
                         <p className="flex flex-col">
-                            <h1 className="text-3xl  text-primary italic drop-shadow-lg font-bold">Sports Mania</h1>
+                            <h1 className="md:text-3xl text-md  text-primary italic drop-shadow-sm font-extrabold ">Sports Mania</h1>
                         </p>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{navOptions}</ul>
                 </div>
-                <div className="navbar-end gap-4">
+                <div className="navbar-end md:gap-4 gap-0">
                     <label className="swap swap-rotate">
                         {/* this hidden checkbox controls the state */}
                         <input
@@ -171,7 +164,7 @@ const Header = () => {
                                 </div>
                             </label>
                             <button
-                                className="btn btn-error text-white font-bold"
+                                className="btn md:btn-md btn-sm btn-primary  text-white font-bold"
                                 onClick={handleLogOut}
                             >
                                 Log Out
@@ -180,7 +173,7 @@ const Header = () => {
                     ) : (
                         <Link
                             to="/login"
-                            className="btn btn-error text-white rounded-md font-bold"
+                            className="btn btn-primary md:btn-md btn-sm text-white rounded-md font-bold"
                         >
                             Login
                         </Link>

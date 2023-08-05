@@ -18,6 +18,9 @@ import Instructorroute from "./Instructorroute";
 import MyClass from "../DashBoardParts/MyClass";
 import ManageClass from "../DashBoardParts/ManageClass";
 import Adminroute from "./Adminroute";
+import Payment from "../payment/Payment";
+import EnrollClass from "../DashBoardParts/EnrollClass";
+import Paymenthistory from "../DashBoardParts/Paymenthistory";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -61,6 +64,18 @@ export const router = createBrowserRouter([
             {
                 path: 'adminhome',
                 element: <AdminHome></AdminHome>
+            },
+            {
+                path: 'payment/:_id',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'enrolledclasses',
+                element: <EnrollClass></EnrollClass>
+            },
+            {
+                path: 'paymenthistory',
+                element: <Paymenthistory></Paymenthistory>
             },
             {
                 path: 'addclass',

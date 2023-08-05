@@ -19,7 +19,7 @@ const OurBlog = () => {
             .then(data => setBlogs(data))
     })
     return (
-        <div className='max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2  py-20'>
+        <div className='max-w-[1920px] mx-auto xl:px-20 md:px-10 sm:px-2  py-20 bg-orange-50'>
             <div className=''>
                 <Rotate delay={100}><h3 className='text-3xl md:text-5xl text-black font-bold md:font-semibold text-center'>Our <span className='text-primary'>Blogs</span></h3></Rotate>
                 <p className=' text-slate-500 text-lg text-center mt-6'>Read the blog and stay update our academy</p>
